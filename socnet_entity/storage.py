@@ -1,0 +1,2 @@
+class EntitySocNetStorage:
+    pass
