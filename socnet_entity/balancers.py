@@ -1,34 +1,19 @@
-class EntitySocNetBalancer:
-    pass
-
 import random
-import time
 from abc import ABC, abstractmethod
 
 
 # from foxycon.data_structures.utils_type import TelegramAccount, Proxy
 
 from socnet_entity.entitys import Proxy, InstagramAccount, TelegramAccount, EntitySocNet
-# from foxycon.utils.storage_manager import StorageManager
 
-class EntitySocNetBalancer:
-    pass
-
-
-class Balancer(ABC):
+class EntitySocNetBalancer(ABC):
 
     @abstractmethod
     def call_next(self):
         pass
 
 
-    # @abstractmethod
-    # def storage_update(self, balancing_object: BalancerType):
-    #     for storage in self._storage:
-    #         storage.add_balance_object(balancing_object)
-
-
-class ProxyBalancer(Balancer):
+class ProxyBalancer(EntitySocNetBalancer):
     def __init__(self, balancing_objects: list[Proxy]):
         super().__init__()
         self._balancing_objects = []
@@ -45,7 +30,7 @@ class ProxyBalancer(Balancer):
     def call_next(self):
         pass
 
-class InstagramBalancer(Balancer):
+class InstagramBalancer(EntitySocNetBalancer):
     def __init__(self, balancing_objects: list[InstagramAccount]):
         self._balancing_objects = []
 
@@ -61,7 +46,7 @@ class InstagramBalancer(Balancer):
     def call_next(self):
         pass
 
-class TelegramBalancer(Balancer):
+class TelegramBalancer(EntitySocNetBalancer):
     def __init__(self, balancing_objects: list[TelegramAccount]):
         self._balancing_objects = []
 

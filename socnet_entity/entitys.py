@@ -1,15 +1,21 @@
+import uuid
 from abc import ABC
 from dataclasses import dataclass
+
 
 from abc import ABC
 from dataclasses import dataclass, field
 
 @dataclass
 class EntitySocNet(ABC):
+    id: uuid.UUID = uuid.uuid4()
     subscribers: list | None = None
     _num_requests: int | None = None
     num_usage_skips: int | None = None
     status_block: bool | None = None
+
+    @property
+
 
     @property
     def num_requests(self):
@@ -39,7 +45,8 @@ class Proxy(EntitySocNet):
 class InstagramAccount(EntitySocNet):
     login: str| None = None
     password: str| None = None
-    token_session: str | None = None
+    session_id: str | None = None
+    token: str | None = None
     initialization_status: bool | None = None
 
 

@@ -6,3 +6,11 @@ class EntitySocNetController:
         self.virtual_storage = []
         self.storage = EntitySocNetStorage(storage) if storage is not None else None
 
+    def add_entity(self):
+        pass
+
+    def delete_entity(self):
+        pass
+
+    def get_entity(self):
+        pass
