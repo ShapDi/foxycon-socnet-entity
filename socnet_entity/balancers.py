@@ -1,16 +1,23 @@
 import random
 from abc import ABC, abstractmethod
 
-
-# from foxycon.data_structures.utils_type import TelegramAccount, Proxy
-
 from socnet_entity.entitys import Proxy, InstagramAccount, TelegramAccount, EntitySocNet
 
-class EntitySocNetBalancer(ABC):
+class EntitySocNetBalancer:
+    pass
+
+
+class Balancer(ABC):
 
     @abstractmethod
     def call_next(self):
         pass
+
+
+    # @abstractmethod
+    # def storage_update(self, balancing_object: BalancerType):
+    #     for storage in self._storage:
+    #         storage.add_balance_object(balancing_object)
 
 
 class ProxyBalancer(EntitySocNetBalancer):
