@@ -101,3 +101,5 @@ ENV/
 *.pkl
 
 test_file.py
+main.py
+test_accounts.json
